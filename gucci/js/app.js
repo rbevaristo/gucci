@@ -7,6 +7,7 @@ for(var i = 0; i < btns.length; i++){
         let filename = image.split('/');
         let name = this.parentNode.children[1].innerHTML;
         let category = this.parentNode.children[2].innerHTML;
-        window.location = `shop.html?name=${name}&category=${category}&image=${filename[filename.length-1]}`;
+        let price = this.parentNode.children[3].innerHTML;
+        window.location = `shop.html?name=${name}&category=${category}&price=${price}&image=${filename[filename.length-1]}`;
     });
 }

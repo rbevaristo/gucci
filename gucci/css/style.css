@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Noto+Serif:400i");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif:400i|Oswald:200,300,400");
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0; }
 
 body {
-  font-family: "Noto Serif", serif;
+  font-family: "Oswald", sans-serif;
   height: 100%; }
 
 header {
@@ -34,12 +34,14 @@ header {
         header nav ul li a {
           text-decoration: none;
           color: #ffffff;
-          font-size: 25px; }
+          font-size: 25px;
+          font-weight: 300; }
 
 main {
   width: 100%;
   margin: 0 auto; }
   main .col6 {
+    font-family: "Noto Serif", serif;
     float: left;
     width: 43%;
     text-align: center; }
@@ -118,7 +120,7 @@ footer {
   margin-bottom: 50px; }
   #shop-info img {
     width: 400px;
-    height: 300px; }
+    height: 400px; }
   #shop-info .forms {
     margin: 0 auto;
     width: 25%; }
@@ -155,7 +157,7 @@ footer {
     padding: 20px; }
     #shop-output .col6 img {
       width: 400px;
-      height: 300px; }
+      height: 400px; }
     #shop-output .col6 p {
       padding: 5px 0;
       text-align: left;

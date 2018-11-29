@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400i');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400i|Oswald:200,300,400');
 
 * {
     box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 
 body {
-    font-family: "Noto Serif", serif;
+    font-family: "Oswald", sans-serif;
     height:100%;
 }
 
@@ -16,6 +16,7 @@ header {
     background: url('../images/Header_bg.jpg') no-repeat center center;
     background-size: cover;
     height: 70px;
+   
     .logo {
         float: left;
         padding: 12px 20px;
@@ -44,6 +45,7 @@ header {
                     text-decoration: none;
                     color: #ffffff;
                     font-size: 25px;
+                    font-weight:300;
                 }
             }
         }
@@ -53,8 +55,8 @@ header {
 main {
     width: 100%;
     margin: 0 auto;
-    
     .col6 {
+        font-family: "Noto Serif", serif;
         float: left;
         width: 43%;
         text-align: center;
@@ -153,9 +155,8 @@ footer {
     text-align: center;
     margin-bottom: 50px;
     img {
-        
         width: 400px;
-        height: 300px;
+        height: 400px;
     }
     .forms {
         margin: 0 auto;
@@ -200,7 +201,7 @@ footer {
         padding: 20px;
         img {
             width: 400px;
-            height: 300px;
+            height: 400px;
         }
         p {
             padding: 5px 0;

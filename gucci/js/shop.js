@@ -1,5 +1,3 @@
-let imageHolder = "";
-
 function getParam(name){  
     name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
     var regexS = "[\\?&]"+name+"=([^&#]*)";  
@@ -16,40 +14,64 @@ function getData(){
     info.children[0].src = `./images/${getParam('image')}`;
     info.children[1].innerHTML = getParam('name').replace(/%20/g, ' ');
     info.children[2].innerHTML = getParam('category').replace(/%20/g, ' ');
-    imageHolder = getParam('image');
+    info.children[3].innerHTML = getParam('price').replace(/%20/g, ' ');
 }
 
 let btn = document.getElementById('buy');
 
 btn.addEventListener('click', function(){
     let inputs = document.getElementsByTagName('input');
+    let selectSize = document.getElementById('size');
+    let isComplete = true;
     for(var i = 0; i < inputs.length; i++){
         if(!inputs[i].value){
-            error(inputs);
-            return false;
+            error(inputs, 'Please fill all fields');
+            isComplete = false;
         }
     }
-    success(inputs);
+    if(isComplete == true){
+        success(inputs, selectSize);
+    }
 });
 
-function error(inputs){
+function error(inputs, message){
     for(var i = 0; i < inputs.length; i++){
         inputs[i].style = 'border: 1px solid red';
     }
-    alert('Please fill all fields');
+    document.getElementById('shop-output').style = 'display:none';
+    alert(message);
 }
 
-function success(inputs){
-    let labels = document.getElementsByTagName('label');
+function success(inputs, selectSize){
+    let labels = document.getElementsByClassName('label');
     let shopOutput = document.getElementById('shop-output');
     let shopList = document.getElementById('shop-info-list');
-    let str = "";
+    let str = `<p>Product Name: ${getParam('name').replace(/%20/g, ' ')}</p>
+               <p>Product Category: ${getParam('category').replace(/%20/g, ' ')}</p>
+               <p>Product Price: ${getParam('price').replace(/%20/g, ' ')}</p>
+    `;
+    let change = calculateChange(inputs[inputs.length-1].value);
+
     for(var i = 0; i < inputs.length; i++){
+        if(i == 1)
+            str += `<p>Size: ${selectSize.value}</p>`;
+        if(i == inputs.length-1){
+            str += `<p>${labels[i].innerHTML} P${inputs[i].value}.00</p>`;
+            continue;
+        }
         str += `<p>${labels[i].innerHTML} ${inputs[i].value}</p>`;
     }
-    
-    shopOutput.children[1].children[0].src = `./images/${imageHolder}`;
+    if(!change){
+        error(inputs, 'Invalid amount!');
+    }
+    str += `<p>Change: P${change}.00</p>`;
+    shopOutput.children[1].children[0].src = `./images/${getParam('image')}`;
     shopList.innerHTML = str;
     shopOutput.style = 'display:block';
     
+}
+
+function calculateChange(amount){
+    let price = parseInt(getParam('price').replace(/%20/g, ' ').split(' ')[1]);
+    return (total = amount - price) > 0 ? total : false; 
 }
