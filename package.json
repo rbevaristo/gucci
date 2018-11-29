@@ -1,0 +1,14 @@
+{
+  "name": "gucci",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-sass -w scss/ -o gucci/css/ --recursive"
+  },
+  "author": "rbevaristo",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.10.0"
+  }
+}

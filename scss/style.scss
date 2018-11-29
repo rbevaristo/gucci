@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400i');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    font-family: "Noto Serif", serif;
+    height:100%;
+}
+
+header {
+    background: url('../images/Header_bg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 70px;
+    .logo {
+        float: left;
+        padding: 12px 20px;
+        width: 100px;
+        height: 80px;
+    }
+    div {
+        position: absolute;
+        top: 10px;
+        left:40%;
+        
+        .header-logo {
+            width: 250px;
+            height: 80px;
+        }
+    }
+    
+    nav {
+        text-align: right;
+        ul {
+            list-style: none;
+            li {
+                display: inline-block;
+                padding: 15px 25px;
+                a {
+                    text-decoration: none;
+                    color: #ffffff;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+    
+    .col6 {
+        float: left;
+        width: 43%;
+        text-align: center;
+        h1 {
+            margin-top: 100px;
+            font-size: 50px;
+            font-weight: 400;
+            color: #009800;
+        }
+        p {
+            margin-left: 200px;
+        }
+        .gucci_cap {
+            margin-top: 60px;
+            width: 400px;
+            height: 300px;
+        }
+    }
+}
+
+section {
+    width: 100%;
+    text-align:center;
+    .col6 {
+        margin: 1.0416666667%;
+        width: 47%;
+    }
+    .col12 {
+        margin: 1.0416666667%;
+        width: 97.9166666667%;
+    }
+    .col6, .col12 {
+        float:left;
+        text-align: center;
+        padding: 20px;
+        .cap {
+            width: 400px;
+            height: 300px;
+        }
+
+        .btn-buy {
+            width: 100px;
+            padding: 10px 20px;
+            font-size: 14px;
+            background: transparent;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+    }
+}
+
+footer {
+    background: url('../images/Header_bg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 70px;
+    width: 100%;
+    float:left;
+    padding: 0;
+    margin: 0;
+    .left {
+        list-style: none;
+       
+        li {
+            display: inline-block;
+            float:left;
+            img {
+                width: 90px;
+                height: 70px;
+                float: left;
+                padding: 12px 20px;
+            }
+            &.tel {
+                color: #ffffff;
+                padding: 18px 0;
+                font-size: 25px;
+            }
+        }
+    }
+    .right {
+        list-style: none;
+        margin-right: 50px;
+        li {
+            display: inline-block;
+            float:right;
+            margin-top:5px;
+            img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+}
+
+#shop-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    img {
+        
+        width: 400px;
+        height: 300px;
+    }
+    .forms {
+        margin: 0 auto;
+        width: 25%;
+        .form-group {
+            padding: 5px 20px;
+            display:block;
+            text-align:right;
+            label, input {
+                display: inline;
+            }
+            input{
+                padding: 5px 5px;
+            }
+            small {
+                display: block;
+                margin-right: 5px;
+                color: red;
+            }
+            .btn-buy {
+                width: 100px;
+                padding: 10px 20px;
+                font-size: 14px;
+                background: transparent;
+                border: 1px solid #000;
+                cursor: pointer;
+                margin-right: 50px;
+            }
+        }
+    }
+}
+
+#shop-output {
+    display:none;
+    width: 100%;
+    text-align:center;
+    .col6 {
+        margin: 1.0416666667%;
+        width: 47%;
+        float:left;
+        text-align: center;
+        padding: 20px;
+        img {
+            width: 400px;
+            height: 300px;
+        }
+        p {
+            padding: 5px 0;
+            text-align: left;
+            display: block;
+        }
+    }
+}
