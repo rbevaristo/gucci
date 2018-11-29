@@ -66,14 +66,17 @@ section {
   section .col12 {
     margin: 1.0416666667%;
     width: 97.9166666667%; }
-  section .col6, section .col12 {
+  section .col6,
+  section .col12 {
     float: left;
     text-align: center;
     padding: 20px; }
-    section .col6 .cap, section .col12 .cap {
+    section .col6 .cap,
+    section .col12 .cap {
       width: 400px;
       height: 300px; }
-    section .col6 .btn-buy, section .col12 .btn-buy {
+    section .col6 .btn-buy,
+    section .col12 .btn-buy {
       width: 100px;
       padding: 10px 20px;
       font-size: 14px;
@@ -128,7 +131,8 @@ footer {
       padding: 5px 20px;
       display: block;
       text-align: right; }
-      #shop-info .forms .form-group label, #shop-info .forms .form-group input {
+      #shop-info .forms .form-group label,
+      #shop-info .forms .form-group input {
         display: inline; }
       #shop-info .forms .form-group input {
         padding: 5px 5px; }
