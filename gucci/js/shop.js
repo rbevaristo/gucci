@@ -47,12 +47,12 @@ function success(inputs, selectSize) {
     let labels = document.getElementsByClassName('label');
     let shopOutput = document.getElementById('shop-output');
     let shopList = document.getElementById('shop-info-list');
+    let price = parseInt(getParam('price').replace(/%20/g, ' ').split(' ')[1]);
     let str = `<p>Product Name: ${getParam('name').replace(/%20/g, ' ')}</p>
                <p>Product Category: ${getParam('category').replace(/%20/g, ' ')}</p>
                <p>Product Price: ${getParam('price').replace(/%20/g, ' ')}</p>
     `;
-    let change = calculateChange(inputs[inputs.length - 1].value);
-    console.log(change);
+    let change = calculateChange(inputs[0].value, inputs[inputs.length - 1].value, price);
     for (var i = 0; i < inputs.length; i++) {
         if (i == 1)
             str += `<p>Size: ${selectSize.value}</p>`;
@@ -62,18 +62,18 @@ function success(inputs, selectSize) {
         }
         str += `<p>${labels[i].innerHTML} ${inputs[i].value}</p>`;
     }
-    if (change < 0) {
+    if (change == 'false') {
         error(inputs, 'Invalid amount!');
         return false;
+    } else {
+        str += `<p>Total: P${inputs[0].value * price}</p>`;
+        str += `<p>Change: P${change}.00</p>`;
+        shopOutput.children[1].children[0].src = `./images/${getParam('image')}`;
+        shopList.innerHTML = str;
+        shopOutput.style = 'display:block';
     }
-    str += `<p>Change: P${change}.00</p>`;
-    shopOutput.children[1].children[0].src = `./images/${getParam('image')}`;
-    shopList.innerHTML = str;
-    shopOutput.style = 'display:block';
-
 }
 
-function calculateChange(amount) {
-    let price = parseInt(getParam('price').replace(/%20/g, ' ').split(' ')[1]);
-    return (total = amount - price) >= 0 ? total : '';
+function calculateChange(qty, amount, price) {
+    return (total = amount - qty * price) >= 0 ? total : 'false';
 }

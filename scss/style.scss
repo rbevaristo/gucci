@@ -5,6 +5,10 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Oswald", sans-serif;
     height: 100%;
@@ -67,7 +71,7 @@ main {
         .gucci_cap {
             margin-top: 60px;
             width: 400px;
-            height: 300px;
+            height: 350px;
         }
     }
 }
@@ -90,7 +94,7 @@ section {
         padding: 20px;
         .cap {
             width: 400px;
-            height: 300px;
+            height: 400px;
         }
         .btn-buy {
             width: 100px;
@@ -124,7 +128,7 @@ footer {
             }
             &.tel {
                 color: #ffffff;
-                padding: 18px 0;
+                padding: 16px 0;
                 font-size: 25px;
             }
         }
